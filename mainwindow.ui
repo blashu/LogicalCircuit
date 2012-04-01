@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>554</width>
+    <height>541</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Расчет логических схем</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="resources.qrc">
+    <normaloff>:/icons/Icons/Calculator.png</normaloff>:/icons/Icons/Calculator.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QSplitter" name="splitter">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="opaqueResize">
+       <bool>true</bool>
+      </property>
+      <property name="handleWidth">
+       <number>5</number>
+      </property>
+      <property name="childrenCollapsible">
+       <bool>false</bool>
+      </property>
+      <widget class="QGraphicsView" name="logicalCircuitView">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>100</height>
+        </size>
+       </property>
+       <property name="baseSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+      </widget>
+      <widget class="QTextEdit" name="logger">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>60</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>200</height>
+        </size>
+       </property>
+       <property name="baseSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>554</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>Файлы</string>
+    </property>
+    <addaction name="newAction"/>
+    <addaction name="openAction"/>
+    <addaction name="saveAction"/>
+    <addaction name="saveAsAction"/>
+    <addaction name="separator"/>
+    <addaction name="closeAction"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Помощь</string>
+    </property>
+    <addaction name="aboutAction"/>
+   </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>Действия</string>
+    </property>
+    <widget class="QMenu" name="menuAddCell">
+     <property name="title">
+      <string>Добавить элемент</string>
+     </property>
+    </widget>
+    <addaction name="menuAddCell"/>
+    <addaction name="separator"/>
+    <addaction name="processAction"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuEdit"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="mouseTracking">
+    <bool>false</bool>
+   </property>
+   <property name="acceptDrops">
+    <bool>false</bool>
+   </property>
+   <property name="movable">
+    <bool>false</bool>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="newAction"/>
+   <addaction name="openAction"/>
+   <addaction name="saveAction"/>
+   <addaction name="closeAction"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="openAction">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/Icons/Open.png</normaloff>:/icons/Icons/Open.png</iconset>
+   </property>
+   <property name="text">
+    <string>Открыть</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="closeAction">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/Icons/Close.png</normaloff>:/icons/Icons/Close.png</iconset>
+   </property>
+   <property name="text">
+    <string>Закрыть</string>
+   </property>
+  </action>
+  <action name="addOrCellAction">
+   <property name="text">
+    <string>или</string>
+   </property>
+  </action>
+  <action name="saveAction">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/Icons/Save.png</normaloff>:/icons/Icons/Save.png</iconset>
+   </property>
+   <property name="text">
+    <string>Сохранить</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="newAction">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/Icons/New.png</normaloff>:/icons/Icons/New.png</iconset>
+   </property>
+   <property name="text">
+    <string>Новый</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="saveAsAction">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/Icons/Save.png</normaloff>:/icons/Icons/Save.png</iconset>
+   </property>
+   <property name="text">
+    <string>Сохранить как</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+S</string>
+   </property>
+  </action>
+  <action name="aboutAction">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/Icons/About.png</normaloff>:/icons/Icons/About.png</iconset>
+   </property>
+   <property name="text">
+    <string>О программе</string>
+   </property>
+  </action>
+  <action name="processAction">
+   <property name="text">
+    <string>Запустить расчет схемы</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>
